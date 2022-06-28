@@ -27,7 +27,7 @@ export class AppComponent {
       (resp) => {
         this.clima = resp;
       },
-      (err) => console.log(err)
+      (err) => { console.log(err) }
     );
   }
 
@@ -36,6 +36,7 @@ export class AppComponent {
       this.getClima(nombre_de_la_ciudad.value);
       localStorage.setItem('miUbicacion', nombre_de_la_ciudad.value);
       nombre_de_la_ciudad.value = '';
+      
     } else {
       alert('por favor ingrese nombre de ciudad');
     }
