@@ -1,13 +1,28 @@
 <div class="container">
   <div class="upper">
-    <img src="../assets/noche.jpg" *ngIf="14 <= 15" alt="" />
-    <img src="../assets/dia.png" *ngIf="14 > 15" alt="" />
+    <img src="../assets/dia.png" *ngIf="7 > 20" alt="" />
+    <img src="../assets/noche.jpg"  *ngIf="7 <= 20" alt="" />
 
     <div class="weather">
-      <div class="location">{{ "cordoba" | titlecase }}</div>
-      <div class="temperature">{{ 14.4 | number: "1.0-0" }} °c</div>
+      <div class="location">{{ clima.name | titlecase }}</div>
+      <div class="temperature">{{ clima.main.temp | number: "1.0-0" }} °c</div>
     </div>
   </div>
+
+  <form (submit)="enviarUbicaion(nombre_de_la_ciudad)">
+    <div>
+      <input type="text" placeholder="ciudad" #nombre_de_la_ciudad />
+      <button>Enviar</button>
+    </div>
+  </form>
+
+  <form (submit)="miUbicaion(nombre_de_la_ciudad)">
+    <div>
+      <input type="text" placeholder="mi ubicacion" #nombre_de_la_ciudad />
+      <button>Enviar</button>
+    </div>
+  </form>
+
   <div class="lower">
     <div class="more-info-label">more info</div>
 
@@ -17,7 +32,9 @@
           <img src="../assets/cold.png" alt="" />
           <span>min</span>
         </div>
-        <div class="info-block-value">10°c</div>
+        <div class="info-block-value">
+          {{ clima.main.temp_min | number: "1.0-0" }}
+        </div>
       </div>
 
       <div class="info-block">
@@ -25,7 +42,9 @@
           <img src="../assets/hot.png" alt="" />
           <span>max</span>
         </div>
-        <div class="info-block-value">20°c</div>
+        <div class="info-block-value">
+          {{ clima.main.temp_max | number: "1.0-0" }}
+        </div>
       </div>
 
       <div class="info-block">
@@ -33,7 +52,9 @@
           <img src="../assets/raining2.png" alt="" />
           <span>humidity</span>
         </div>
-        <div class="info-block-value">77%</div>
+        <div class="info-block-value">
+          {{ clima.main.humidity | number: "1.1-2" }}%
+        </div>
       </div>
 
       <div class="info-block">
@@ -41,9 +62,10 @@
           <img src="../assets/windedClouds.png" alt="" />
           <span>wind</span>
         </div>
-        <div class="info-block-value">8 km/h</div>
+        <div class="info-block-value">
+          {{ clima.wind.speed | number: "1.0-0" }} km/hr
+        </div>
       </div>
-
     </div>
   </div>
 </div>
