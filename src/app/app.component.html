@@ -4,8 +4,8 @@
     <img src="../assets/noche.png"  *ngIf="hora >= 19" alt="" />
 
     <div class="weather">
-      <div class="location">{{ clima.name | titlecase }}</div>
-      <div class="temperature">{{ clima.main.temp | number: "1.0-0" }} °c</div>
+      <div class="location">{{ clima?.name | titlecase }}</div>
+      <div class="temperature">{{ clima?.main.temp | number: "1.0-0" }} °c</div>
     </div>
   </div>
 
@@ -27,7 +27,7 @@
           <span>min</span>
         </div>
         <div class="info-block-value">
-          {{ clima.main.temp_min | number: "1.0-0" }}
+          {{ clima?.main.temp_min | number: "1.0-0" }}
         </div>
       </div>
 
@@ -37,7 +37,7 @@
           <span>max</span>
         </div>
         <div class="info-block-value">
-          {{ clima.main.temp_max | number: "1.0-0" }}
+          {{ clima?.main.temp_max | number: "1.0-0" }}
         </div>
       </div>
 
@@ -47,7 +47,7 @@
           <span>humedad</span>
         </div>
         <div class="info-block-value">
-          {{ clima.main.humidity | number: "1.1-2" }}%
+          {{ clima?.main.humidity | number: "1.1-2" }}%
         </div>
       </div>
 
@@ -57,7 +57,7 @@
           <span>velocidad del viento</span>
         </div>
         <div class="info-block-value">
-          {{ clima.wind.speed | number: "1.0-0" }} km/hr
+          {{ clima?.wind.speed | number: "1.0-0" }} km/hr
         </div>
       </div>
     </div>
