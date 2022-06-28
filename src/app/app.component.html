@@ -1,7 +1,7 @@
 <div class="container">
   <div class="upper">
-    <img src="../assets/dia.png" *ngIf="7 > 20" alt="" />
-    <img src="../assets/noche.jpg"  *ngIf="7 <= 20" alt="" />
+    <img src="../assets/dia.png" *ngIf="10 > 7" alt="" />
+    <img src="../assets/noche.png"  *ngIf="20 <= 23" alt="" />
 
     <div class="weather">
       <div class="location">{{ clima.name | titlecase }}</div>
@@ -9,22 +9,16 @@
     </div>
   </div>
 
-  <form (submit)="enviarUbicaion(nombre_de_la_ciudad)">
+  <form class="form" (submit)="enviarUbicaion(nombre_de_la_ciudad)">
     <div>
       <input type="text" placeholder="ciudad" #nombre_de_la_ciudad />
       <button>Enviar</button>
     </div>
   </form>
 
-  <form (submit)="miUbicaion(nombre_de_la_ciudad)">
-    <div>
-      <input type="text" placeholder="mi ubicacion" #nombre_de_la_ciudad />
-      <button>Enviar</button>
-    </div>
-  </form>
 
   <div class="lower">
-    <div class="more-info-label">more info</div>
+    <div class="more-info-label">Más información</div>
 
     <div class="more-info-container">
       <div class="info-block">
@@ -50,7 +44,7 @@
       <div class="info-block">
         <div class="info-block-label">
           <img src="../assets/raining2.png" alt="" />
-          <span>humidity</span>
+          <span>humedad</span>
         </div>
         <div class="info-block-value">
           {{ clima.main.humidity | number: "1.1-2" }}%
@@ -60,7 +54,7 @@
       <div class="info-block">
         <div class="info-block-label">
           <img src="../assets/windedClouds.png" alt="" />
-          <span>wind</span>
+          <span>velocidad del viento</span>
         </div>
         <div class="info-block-value">
           {{ clima.wind.speed | number: "1.0-0" }} km/hr
@@ -68,5 +62,8 @@
       </div>
     </div>
   </div>
+  <footer>
+    <p>Created by Cyberkrane_2022 ©</p>
+  </footer>
 </div>
 <router-outlet></router-outlet>
