@@ -1,7 +1,7 @@
 <div class="container">
   <div class="upper">
-    <img src="../assets/dia.png" *ngIf="10 > 7" alt="" />
-    <img src="../assets/noche.png"  *ngIf="20 <= 23" alt="" />
+    <img src="../assets/dia.png" *ngIf="hora < 19" alt="" />
+    <img src="../assets/noche.png"  *ngIf="hora >= 19" alt="" />
 
     <div class="weather">
       <div class="location">{{ clima.name | titlecase }}</div>

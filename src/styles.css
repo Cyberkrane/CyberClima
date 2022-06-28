@@ -20,6 +20,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 footer{
     text-align: center;
@@ -41,6 +42,8 @@ footer{
 
 .container{
     border-radius: 20px;
+    overflow: hidden;
+    background-color: var(--shadow-dark);
     box-shadow: 10px 10px 10px var(--shadow-dark);
 }
 .upper{
@@ -48,8 +51,6 @@ footer{
     overflow: hidden;
     width: 100%;
     height: 35%;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
     text-shadow: rgb(68, 74, 80) 1px 1px 4px, rgb(68, 74, 80) 2px 2px 5px;
 }
 .upper img{
@@ -57,7 +58,6 @@ footer{
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
 }
 
 .lower{
@@ -65,8 +65,6 @@ footer{
     overflow: hidden;
     width: 100%;
     height: 55%;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
     padding: 0.5em;
     display: flex;
     flex-direction: column;
@@ -76,23 +74,21 @@ footer{
     z-index: 1;
     width: 100%;
     height: 100%;
-    background-color: var(--shadow-dark);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    
 }
 
 .location{
     color: var(--white);
-    text-align: center;
     font-size: 1.2em;
 }
 
 .temperature{
     color: var(--white);
     font-size: 4em;
-    text-align: center;
     font-weight: 900;
 }
 
