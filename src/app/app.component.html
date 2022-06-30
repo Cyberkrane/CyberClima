@@ -1,7 +1,7 @@
 <div class="container">
   <div class="upper">
-    <img src="../assets/dia.png" *ngIf="hora < 19" alt="" />
-    <img src="../assets/noche.png"  *ngIf="hora >= 19" alt="" />
+    <img src="../assets/dia.png" *ngIf="hora < 19 || hora >= 7" alt="dia" />
+    <img src="../assets/noche.png"  *ngIf="hora >= 19 || hora <= 6" alt="noche" />
 
     <div class="weather">
       <div class="location">{{ clima?.name | titlecase }}</div>
@@ -23,27 +23,27 @@
     <div class="more-info-container">
       <div class="info-block">
         <div class="info-block-label">
-          <img src="../assets/cold.png" alt="" />
+          <i class="bi bi-thermometer-low"></i>
           <span>min</span>
         </div>
         <div class="info-block-value">
-          {{ clima?.main.temp_min | number: "1.0-0" }}
+          {{ clima?.main.temp_min | number: "1.0-0" }} °c
         </div>
       </div>
 
       <div class="info-block">
         <div class="info-block-label">
-          <img src="../assets/hot.png" alt="" />
+          <i class="bi bi-thermometer-high"></i>
           <span>max</span>
         </div>
         <div class="info-block-value">
-          {{ clima?.main.temp_max | number: "1.0-0" }}
+          {{ clima?.main.temp_max | number: "1.0-0" }} °c
         </div>
       </div>
 
       <div class="info-block">
         <div class="info-block-label">
-          <img src="../assets/raining2.png" alt="" />
+          <i class="bi bi-moisture"></i>
           <span>humedad</span>
         </div>
         <div class="info-block-value">
@@ -53,8 +53,8 @@
 
       <div class="info-block">
         <div class="info-block-label">
-          <img src="../assets/windedClouds.png" alt="" />
-          <span>velocidad del viento</span>
+          <i class="bi bi-wind"></i>
+          <span>Vientos</span>
         </div>
         <div class="info-block-value">
           {{ clima?.wind.speed | number: "1.0-0" }} km/hr

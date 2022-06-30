@@ -12,6 +12,7 @@ export class AppComponent {
   mi_ubicacion = localStorage.getItem('miUbicacion');
   nombre_de_la_ciudad: any = this.mi_ubicacion;
   hora: number = 12;
+  
 
   constructor(private climaService: ClimaService) {}
 
@@ -20,6 +21,7 @@ export class AppComponent {
       this.getClima(this.mi_ubicacion);
     }
     this.hora = new Date().getHours();
+    console.log(this.hora)
   }
 
   getClima(nombre_de_la_ciudad: string) {
