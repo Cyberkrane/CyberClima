@@ -1,0 +1,8 @@
+
+.btn-speaker{
+    background-color: rgba(59, 160, 248, 0.014);
+    border-width: 0;
+    font-size: 1.5em;
+    color: rgb(208, 218, 226);
+    text-shadow: rgb(20, 209, 99) 0 0 3px, rgb(87, 250, 155) 0 0 13px;
+}

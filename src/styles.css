@@ -161,7 +161,7 @@ footer{
 @media screen and (min-width: 300px) {
     .container{
         width: 99vw;
-        height: 99vh;
+        height: 90vh;
     }
 }
 

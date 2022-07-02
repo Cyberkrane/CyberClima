@@ -1,7 +1,11 @@
 <div class="container">
   <div class="upper">
     <img src="../assets/dia.png" *ngIf="hora < 19 || hora >= 7" alt="dia" />
-    <img src="../assets/noche.png"  *ngIf="hora >= 19 || hora <= 6" alt="noche" />
+    <img
+      src="../assets/noche.png"
+      *ngIf="hora >= 19 || hora <= 6"
+      alt="noche"
+    />
 
     <div class="weather">
       <div class="location">{{ clima?.name | titlecase }}</div>
@@ -15,7 +19,6 @@
       <button>Enviar</button>
     </div>
   </form>
-
 
   <div class="lower">
     <div class="more-info-label">Más información</div>
@@ -61,7 +64,21 @@
         </div>
       </div>
     </div>
+
+    <textarea id="mensaje" cols="30" rows="5" hidden>
+      en este momento en la ciudad de {{ clima?.name }}, la temperatura es de {{
+        clima?.main.temp | number: "1.1-1"
+      }} grados celsius, la humedad del {{
+        clima?.main.humidity
+      }} por ciento y la velocidad del viento de {{
+        clima?.wind.speed
+      }} kilometros por hora.</textarea
+    >
+    <button id="btnEscuchar" class="btn-speaker">
+      <i class="bi bi-volume-up"></i>
+    </button>
   </div>
+
   <footer>
     <p>Created by Cyberkrane_2022 ©</p>
   </footer>
