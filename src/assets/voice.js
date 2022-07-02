@@ -15,9 +15,9 @@ document.addEventListener("click", () => {
 
   // Si hay evento, entonces lo esperamos
   // if ('onvoiceschanged' in speechSynthesis) {
-    speechSynthesis.onvoiceschanged = function () {
-      cargarVoces();
-    };
+    // speechSynthesis.onvoiceschanged = function () {
+    //   cargarVoces();
+    // };
   // }
 
   // El click del botón. Aquí sucede la magia
