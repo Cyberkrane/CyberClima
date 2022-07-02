@@ -27,7 +27,7 @@ document.addEventListener("click", () => {
     mensaje.voice = vocesDisponibles[13];
     mensaje.volume = 1;
     mensaje.text = textoAEscuchar;
-    mensaje.pitch = 1;
+    mensaje.pitch = 0.8;
     speechSynthesis.speak(mensaje);
   });
 });
