@@ -21,8 +21,6 @@ export class AppComponent {
       this.getClima(this.mi_ubicacion);
     }
     this.hora = new Date().getHours();
-
- 
   }
 
   getClima(nombre_de_la_ciudad: string) {
@@ -32,9 +30,7 @@ export class AppComponent {
       },
       (err) => {
         console.log(err);
-      }
-    );
- 
+      });
   }
 
   enviarUbicaion(nombre_de_la_ciudad: HTMLInputElement) {
@@ -42,25 +38,16 @@ export class AppComponent {
       this.getClima(nombre_de_la_ciudad.value);
       localStorage.setItem('miUbicacion', nombre_de_la_ciudad.value);
       nombre_de_la_ciudad.value = '';
-
     } else {
       alert('por favor ingrese nombre de ciudad');
     }
-
     nombre_de_la_ciudad.focus();
-
     return false;
   }
 
-
-// inicio enVozAlta() //
-
   enVozAlta() {
 
-    console.log('hablando........');
-
     const boton = document.querySelector('#btnEscuchar');
-   
     let vocesDisponibles = [];
 
     // Si hay evento, entonces lo esperamos
@@ -78,8 +65,5 @@ export class AppComponent {
       };
     }
   }
-
-  // fin //
-
 
 }

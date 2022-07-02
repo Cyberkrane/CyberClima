@@ -75,7 +75,7 @@
 
       }} kilometros por hora.</textarea>
 
-    <button id="btnEscuchar" class="btn-speaker" (click)="enVozAlta()">
+    <button id="btnEscuchar" class="btn-speaker" *ngIf="mensaje" (click)="enVozAlta()">
       <i class="bi bi-volume-up"></i>
     </button>
   </div>
