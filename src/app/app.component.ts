@@ -50,6 +50,11 @@ export class AppComponent {
     return false;
   }
 
+<<<<<<< HEAD
+=======
+
+// inicio enVozAlta() //
+>>>>>>> 3e200e417ae7dcf37f3aee393dd37e7337c0b27c
   enVozAlta() {
     console.log('hablando........');
 
@@ -71,4 +76,11 @@ export class AppComponent {
       };
     }
   }
+<<<<<<< HEAD
+=======
+  // fin //
+
+
+  
+>>>>>>> 3e200e417ae7dcf37f3aee393dd37e7337c0b27c
 }
