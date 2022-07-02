@@ -4,7 +4,7 @@ import { ClimaService } from './services/clima.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'cyberclima_version_1.6.0';
@@ -13,7 +13,6 @@ export class AppComponent {
   mi_ubicacion = localStorage.getItem('miUbicacion');
   nombre_de_la_ciudad: any = this.mi_ubicacion;
   hora: number = 12;
-  
 
   constructor(private climaService: ClimaService) {}
 
@@ -22,7 +21,8 @@ export class AppComponent {
       this.getClima(this.mi_ubicacion);
     }
     this.hora = new Date().getHours();
-    console.log(this.hora)
+
+ 
   }
 
   getClima(nombre_de_la_ciudad: string) {
@@ -30,7 +30,9 @@ export class AppComponent {
       (resp) => {
         this.clima = resp;
       },
-      (err) => { console.log(err) }
+      (err) => {
+        console.log(err);
+      }
     );
  
   }
@@ -40,8 +42,7 @@ export class AppComponent {
       this.getClima(nombre_de_la_ciudad.value);
       localStorage.setItem('miUbicacion', nombre_de_la_ciudad.value);
       nombre_de_la_ciudad.value = '';
-      const $mensaje = document.querySelector('#mensaje')?.innerHTML;
-      this.enVozAlta($mensaje)
+
     } else {
       alert('por favor ingrese nombre de ciudad');
     }
@@ -53,7 +54,9 @@ export class AppComponent {
 
 
 // inicio enVozAlta() //
-  enVozAlta($mensaje: any) {
+
+  enVozAlta() {
+
     console.log('hablando........');
 
     const boton = document.querySelector('#btnEscuchar');
@@ -75,5 +78,8 @@ export class AppComponent {
       };
     }
   }
+
   // fin //
+
+
 }
