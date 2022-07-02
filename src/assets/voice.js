@@ -24,10 +24,10 @@ document.addEventListener("click", () => {
   $boton.addEventListener("click", () => {
     let textoAEscuchar = $mensaje.value;
     let mensaje = new SpeechSynthesisUtterance();
-    mensaje.voice = vocesDisponibles[$voces.value];
+    mensaje.voice = vocesDisponibles[13];
     mensaje.volume = 1;
     mensaje.text = textoAEscuchar;
-    mensaje.pitch = 0.5;
+    mensaje.pitch = 1;
     speechSynthesis.speak(mensaje);
   });
 });
