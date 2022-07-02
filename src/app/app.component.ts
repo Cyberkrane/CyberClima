@@ -32,6 +32,7 @@ export class AppComponent {
       },
       (err) => { console.log(err) }
     );
+ 
   }
 
   enviarUbicaion(nombre_de_la_ciudad: HTMLInputElement) {
@@ -39,7 +40,8 @@ export class AppComponent {
       this.getClima(nombre_de_la_ciudad.value);
       localStorage.setItem('miUbicacion', nombre_de_la_ciudad.value);
       nombre_de_la_ciudad.value = '';
-      
+      const $mensaje = document.querySelector('#mensaje')?.innerHTML;
+      this.enVozAlta($mensaje)
     } else {
       alert('por favor ingrese nombre de ciudad');
     }
@@ -51,15 +53,16 @@ export class AppComponent {
 
 
 // inicio enVozAlta() //
-  enVozAlta() {
+  enVozAlta($mensaje: any) {
     console.log('hablando........');
 
     const boton = document.querySelector('#btnEscuchar');
-    const $mensaje = document.querySelector('#mensaje')?.innerHTML;
+   
     let vocesDisponibles = [];
 
     // Si hay evento, entonces lo esperamos
     if ('onvoiceschanged' in speechSynthesis) {
+       const $mensaje = document.querySelector('#mensaje')?.innerHTML;
       speechSynthesis.onvoiceschanged = function () {
         vocesDisponibles = speechSynthesis.getVoices();
         let textoAEscuchar = $mensaje!;
@@ -73,7 +76,4 @@ export class AppComponent {
     }
   }
   // fin //
-
-
-  
 }

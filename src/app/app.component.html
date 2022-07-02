@@ -65,17 +65,16 @@
       </div>
     </div>
 
-    <textarea id="mensaje" cols="30" rows="5" hidden>
+    <textarea id="mensaje" cols="30" rows="5" hidden #mensaje>
       en este momento en la ciudad de {{ clima?.name }}, la temperatura es de {{
         clima?.main.temp | number: "1.1-1"
       }} grados celsius, la humedad del {{
         clima?.main.humidity
       }} por ciento y la velocidad del viento de {{
         clima?.wind.speed
-      }} kilometros por hora.
-      Apoya la iniciativa control mundial i.a</textarea
+      }} kilometros por hora.</textarea
     >
-    <button id="btnEscuchar" class="btn-speaker" (click)="enVozAlta()">
+    <button id="btnEscuchar" class="btn-speaker" (click)="enVozAlta(mensaje)">
       <i class="bi bi-volume-up"></i>
     </button>
   </div>
