@@ -1,4 +1,4 @@
-import { HttpClient, HttpStatusCode } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -12,7 +12,11 @@ export class ClimaService {
   constructor(private http: HttpClient) {
     this.URI = `https://api.openweathermap.org/data/2.5/weather?&appid=${this.apiKey}&units=metric&lang=sp&q=`;
   }
-
+/**
+ * 
+ * @param {String} nombreDeCiudad 
+ * @returns ClimaService.http
+ */
   getClima(nombreDeCiudad: string) {
     return this.http.get(`${this.URI}${nombreDeCiudad}`);
   }
