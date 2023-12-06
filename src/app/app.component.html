@@ -13,7 +13,7 @@
     </div>
   </div>
 
-  <form class="form" (submit)="enviarUbicaion(nombre_de_la_ciudad)">
+  <form class="form" (submit)="enviarUbicacion(nombre_de_la_ciudad)">
     <div>
       <input type="text" placeholder="ciudad" #nombre_de_la_ciudad />
       <button>Enviar</button>
@@ -70,12 +70,12 @@
         clima?.main.temp | number: "1.1-1"
       }} grados celsius, la humedad del {{
         clima?.main.humidity
-      }} por ciento y la velocidad del viento de {{
+      }} por ciento y la velocidad del viento es de {{
         clima?.wind.speed
 
       }} kilometros por hora.</textarea>
 
-    <button id="btnEscuchar" class="btn-speaker" *ngIf="mensaje" (click)="enVozAlta()">
+    <button class="btn-speaker" *ngIf="mensaje" (click)="enVozAlta()">
       <i class="bi bi-volume-up"></i>
     </button>
   </div>
